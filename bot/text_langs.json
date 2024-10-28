@@ -1,0 +1,12 @@
+{
+  "en": {
+    "startup_message": "BotenBot is starting...",
+    "discord_token_missing": "Discord token was not found! Exiting...",
+    "cogs_dir_empty": "Cogs directory is empty!"
+  },
+  "pl": {
+    "startup_message": "BotenBot startuje...",
+    "discord_token_missing": "Nie znaleziono tokena Discorda. Zamykanie...",
+    "cogs_dir_empty": "Ścieżka Cogs jest pusta!"
+  }
+}
