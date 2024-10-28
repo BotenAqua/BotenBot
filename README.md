@@ -20,17 +20,40 @@ discord.py==2.4.0
 
 ## Setup
 
-The bot takes two environmental variables:
+The bot takes environmental variables:
 
-DISCORD_TOKEN
 ```bash
 DISCORD_TOKEN=XXXXXXXXXXXXXX...
+
+DOTENV_PATH=path/to/.env
+
+BOT_LANG=[en | pl]
+BOT_PREFIX=
 ```
-DOTENV_PATH
-```bash
-DOTENV_PATH='path/to/.env'
+### DISCORD_TOKEN
+*(required)*
+
+Discord token is required for bot to run. App will close if not provided.
+
+### DOTENV_PATH
+
+Path to .env file.
+
+### BOT_LANG
+
+Desired language to get correct prints from bot/text_langs.json file. If not provided or provided language will not be found, defaults to English.
+
+Avaliable languages:
 ```
-Only the token is required, but it can be in the .env file if the path to it is specified.
+en -> English
+pl -> Polish
+```
+
+### BOT_PREFIX
+
+Bot prefix. Default: '!'
+
+---
 
 You can start the bot by running main.py
 ```bash
@@ -44,7 +67,8 @@ BotenBot is a Discord bot with a `cogs` folder replaceable with Docker volume `-
 To do:
 
 - [ ] Dockerize
-- [ ] QOL (changeable command_prefix etc.)
+- [x] QOL (changeable command_prefix etc.)
+- [x] Localization support
 - [ ] Debug mode
 - [ ] Logger (\*)
 - [ ] Database (\*)
