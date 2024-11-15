@@ -66,7 +66,7 @@ BotenBot is a Discord bot with a `cogs` folder replaceable with Docker volume `-
 
 To do:
 
-- [ ] Dockerize
+- [x] Dockerize
 - [x] QOL (changeable command_prefix etc.)
 - [x] Localization support
 - [ ] Debug mode
