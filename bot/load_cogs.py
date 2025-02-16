@@ -6,8 +6,6 @@ async def _load_cog(bot, cog_name) -> None:
         return
     if (cog := f'cogs.{cog_name.removesuffix(".py")}') not in bot.extensions.keys():
         await bot.load_extension(cog)
-    else:
-        print(f'Skipping {cog_name}')
     return
 
 async def load_cogs(bot) -> None:
