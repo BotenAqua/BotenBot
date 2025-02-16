@@ -1,6 +1,6 @@
 # BotenBot
 
-Simple (to be) Dockerized Discord.py bot.
+Simple [Dockerized](https://hub.docker.com/r/botenaqua/discord-botenbot/tags) Discord.py bot.
 
 ## Table of contents
 
@@ -29,6 +29,7 @@ DOTENV_PATH=path/to/.env
 
 BOT_LANG=[en | pl]
 BOT_PREFIX=
+PRIORITY_COGS='cog1 cog2...'
 ```
 ### DISCORD_TOKEN
 *(required)*
@@ -52,6 +53,10 @@ pl -> Polish
 ### BOT_PREFIX
 
 Bot prefix. Default: '!'
+
+### PRIORITY_COGS
+
+Space separated list of cogs that should be loaded before the rest.
 
 ---
 
