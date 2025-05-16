@@ -1,6 +1,6 @@
 # BotenBot
 
-Simple (to be) Dockerized Discord.py bot.
+Simple [Dockerized](https://hub.docker.com/r/botenaqua/discord-botenbot/tags) Discord.py bot.
 
 ## Table of contents
 

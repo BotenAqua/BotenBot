@@ -10,6 +10,8 @@ def load_env() -> None:
         load_dotenv(_dotenv_path)
     return
 
+def get_bot_directory() -> str:
+    return os.path.dirname(__file__)
 
 def get_discord_token(bot) -> str:
     if not (discord_token := os.getenv('DISCORD_TOKEN')):
@@ -18,8 +20,8 @@ def get_discord_token(bot) -> str:
     return discord_token
 
 
-def get_bot_lang() -> dict:
-    dict_file_location = 'bot/text_langs.json'
+def get_bot_lang(bot_dir) -> dict:
+    dict_file_location = os.path.join(bot_dir, 'text_langs.json')
     lang = os.getenv('BOT_LANG') or 'en'
     with open(dict_file_location) as lang_file:
         lang_dict = json.load(lang_file)
