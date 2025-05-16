@@ -3,14 +3,12 @@
     "startup_message": "BotenBot is starting...",
     "discord_token_missing": "Discord token was not found! Exiting...",
     "cogs_dir_empty": "Cogs directory is empty!",
-    "priority_cogs_error": "PRIOROTY_COGS is invalid! Skipping...",
     "cog_load_error": "There was an error loading {cog} cog: {e}"
   },
   "pl": {
     "startup_message": "BotenBot startuje...",
     "discord_token_missing": "Nie znaleziono tokena Discorda. Zamykanie...",
     "cogs_dir_empty": "Ścieżka Cogs jest pusta!",
-    "priority_cogs_error": "PRIOROTY_COGS jest nieprawodłowa! Pomijam...",
     "cog_load_error": "Wystąpił problep podczas wczytywania {cog}: {e}"
   }
 }

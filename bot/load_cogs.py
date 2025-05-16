@@ -8,29 +8,35 @@ async def _load_cog(bot, cog_name) -> None:
         await bot.load_extension(cog)
     return
 
+async def _cog_loader(bot, cogs_location, cogs_list):
+    if len(cogs_list) == 0:
+        print(bot.lang.get('cogs_dir_empty'))
+        return
+
+    for cog in cogs_list:
+        try:
+            await _load_cog(bot, cog)
+        except Exception as e:
+            # TODO: Add this
+            # print(f"{bot.lang.get('cog_load_error')}")
+            print(f'There was an error loading {cog} cog: {e}')
+    return 
+
+async def required_cogs(bot, *required_cogs):
+    # TODO: Try to add this
+    # cogs_location = os.getenv('COGS_LOCATION', os.path.join(bot.bot_dir, '../cogs'))
+    # code duplication!!
+    cogs_location = '../cogs'
+    print(required_cogs)
+    await _cog_loader(bot, cogs_location, required_cogs)
+    return
+
 async def load_cogs(bot) -> None:
     # TODO: Try to add this
     # cogs_location = os.getenv('COGS_LOCATION', os.path.join(bot.bot_dir, '../cogs'))
     cogs_location = '../cogs'
     cogs_list = os.listdir(os.path.join(bot.bot_dir, cogs_location))
 
-    if len(cogs_list) == 0:
-        print(bot.lang.get('cogs_dir_empty'))
-        return
+    await _cog_loader(bot, cogs_location, cogs_list)
 
-    prioroty_cogs = os.getenv('PRIORITY_COGS', list()).split() # TODO: ,? ', '?
-
-    if type(prioroty_cogs) != list:
-        print(bot.lang.get('priority_cogs_error'))
-    else:
-        for cog in prioroty_cogs:
-            try:
-                await _load_cog(bot, cog)
-            except Exception as e:
-                # TODO: Add this
-                # print(f"{bot.lang.get('cog_load_error')}")
-                print(f'There was an error loading {cog} cog: {e}')
-
-    for filename in cogs_list:
-        await _load_cog(bot, filename)
     return
