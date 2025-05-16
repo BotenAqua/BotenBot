@@ -8,7 +8,7 @@ async def _load_cog(bot, cog_name) -> None:
         await bot.load_extension(cog)
     return
 
-async def _cog_loader(bot, cogs_location, cogs_list):
+async def _cog_loader(bot, cogs_list):
     if len(cogs_list) == 0:
         print(bot.lang.get('cogs_dir_empty'))
         return
@@ -26,9 +26,8 @@ async def required_cogs(bot, *required_cogs):
     # TODO: Try to add this
     # cogs_location = os.getenv('COGS_LOCATION', os.path.join(bot.bot_dir, '../cogs'))
     # code duplication!!
-    cogs_location = '../cogs'
     print(required_cogs)
-    await _cog_loader(bot, cogs_location, required_cogs)
+    await _cog_loader(bot, required_cogs)
     return
 
 async def load_cogs(bot) -> None:
@@ -37,6 +36,6 @@ async def load_cogs(bot) -> None:
     cogs_location = '../cogs'
     cogs_list = os.listdir(os.path.join(bot.bot_dir, cogs_location))
 
-    await _cog_loader(bot, cogs_location, cogs_list)
+    await _cog_loader(bot, cogs_list)
 
     return
